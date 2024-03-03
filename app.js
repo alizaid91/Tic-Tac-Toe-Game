@@ -31,7 +31,7 @@ boxes.forEach((box) => {
       turnO = false;
     } else {
       box.innerHTML = "X";
-      box.style.color = "#ea580c"
+      box.style.color = "#green"
       turnO = true;
     }
     box.disabled = true;
