@@ -4,6 +4,14 @@ let newGameBtn = document.querySelector("#new-game-btn");
 let msgContainer = document.querySelector(".msg-container");
 let msg = document.querySelector("#msg");
 
+let scoreO = document.querySelector("#oscore");
+let scoreX = document.querySelector("#xscore");
+let noDraws = document.querySelector("#draws");
+
+let winsO = 0;
+let winsX = 0;
+let draws = 0;
+
 let winPatterns = [
   [0, 1, 2],
   [0, 3, 6],
@@ -14,17 +22,17 @@ let winPatterns = [
   [3, 4, 5],
   [6, 7, 8],
 ];
-
-let turnO = true;
-
 const resetGame = () => {
-  turnO = true;
+  turnX = true;
   setTimeout(function () {
     msgContainer.classList.add("hide");
-  }, 500);
+  }, 300);
   msgContainer.classList.remove("show");
   enableBoxes();
 };
+
+let turnO = true;
+let turnX = false;
 
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
@@ -32,10 +40,12 @@ boxes.forEach((box) => {
       box.innerHTML = "O";
       box.style.color = "crimson";
       turnO = false;
-    } else {
+      turnX = true;
+    } else if (turnX) {
       box.innerHTML = "X";
       box.style.color = "white";
       turnO = true;
+      turnX = false;
     }
     box.disabled = true;
 
@@ -57,16 +67,29 @@ const enableBoxes = () => {
 };
 
 const showWinner = (winner) => {
+  if (winner == "O") {
+    winsO += 1;
+    scoreO.innerHTML = `O : ${winsO}`;
+  } else if (winner == "X") {
+    winsX += 1;
+    scoreX.innerHTML = `X : ${winsX}`;
+  }
+
   msg.innerText = `Winner is ${winner}`;
+
   msgContainer.classList.remove("hide");
   setTimeout(function () {
     msgContainer.classList.add("show");
-  }, 500);
+  }, 300);
   disableBoxes();
 };
 
 const drawCase = () => {
+  draws += 1;
   msg.innerText = `Draw!`;
+
+  noDraws.innerHTML = `Draws : ${draws}`;
+
   msgContainer.classList.remove("hide");
   setTimeout(function () {
     msgContainer.classList.add("show");
