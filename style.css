@@ -32,6 +32,12 @@ body {
   backdrop-filter: blur(5px);
   z-index: 1;
   border-radius: 15px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.msg-container.show{
+  opacity: 1;
 }
 
 #msg{
