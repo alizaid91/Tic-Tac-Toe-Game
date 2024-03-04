@@ -19,7 +19,10 @@ let turnO = true;
 
 const resetGame = () => {
   turnO = true;
-  msgContainer.classList.add("hide");
+  setTimeout(function () {
+    msgContainer.classList.add("hide");
+  }, 500);
+  msgContainer.classList.remove("show");
   enableBoxes();
 };
 
@@ -27,11 +30,11 @@ boxes.forEach((box) => {
   box.addEventListener("click", () => {
     if (turnO) {
       box.innerHTML = "O";
-      box.style.color = "#e11d48"
+      box.style.color = "crimson";
       turnO = false;
     } else {
       box.innerHTML = "X";
-      box.style.color = "white"
+      box.style.color = "white";
       turnO = true;
     }
     box.disabled = true;
@@ -56,18 +59,24 @@ const enableBoxes = () => {
 const showWinner = (winner) => {
   msg.innerText = `Winner is ${winner}`;
   msgContainer.classList.remove("hide");
+  setTimeout(function () {
+    msgContainer.classList.add("show");
+  }, 500);
   disableBoxes();
 };
 
 const drawCase = () => {
   msg.innerText = `Draw!`;
   msgContainer.classList.remove("hide");
+  setTimeout(function () {
+    msgContainer.classList.add("show");
+  }, 500);
   disableBoxes();
 };
 
 const checkWinner = () => {
   let winnerFound = false;
-  let emptyBoxes = 0
+  let emptyBoxes = 0;
   for (let patterns of winPatterns) {
     let pos1Val = boxes[patterns[0]].innerText;
     let pos2Val = boxes[patterns[1]].innerText;
@@ -76,17 +85,17 @@ const checkWinner = () => {
     if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
       if (pos1Val === pos2Val && pos2Val == pos3Val) {
         showWinner(pos1Val);
-        winnerFound = true
-        break
+        winnerFound = true;
+        break;
       }
     }
-    if(pos1Val === "" || pos2Val === "" || pos3Val === ""){
-      emptyBoxes++
+    if (pos1Val === "" || pos2Val === "" || pos3Val === "") {
+      emptyBoxes++;
     }
   }
 
-  if(!winnerFound && emptyBoxes === 0){
-    drawCase()
+  if (!winnerFound && emptyBoxes === 0) {
+    drawCase();
   }
 };
 
