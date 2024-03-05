@@ -2,11 +2,11 @@ let boxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#reset-btn");
 let newGameBtn = document.querySelector("#new-game-btn");
 let msgContainer = document.querySelector(".msg-container");
+let win = document.querySelector("#win");
 let msg = document.querySelector("#msg");
 
 let scoreO = document.querySelector("#oscore");
 let scoreX = document.querySelector("#xscore");
-let noDraws = document.querySelector("#draws");
 
 let winsO = 0;
 let winsX = 0;
@@ -34,16 +34,24 @@ const resetGame = () => {
 let turnO = true;
 let turnX = false;
 
+if (turnO) {
+  scoreO.style.borderBottom = "5px solid red";
+}
+
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
     if (turnO) {
       box.innerHTML = "O";
-      box.style.color = "crimson";
+      box.style.color = "#e5e5e5";
+      scoreX.style.borderBottom = "5px solid red";
+      scoreO.style.borderBottom = "";
       turnO = false;
       turnX = true;
     } else if (turnX) {
       box.innerHTML = "X";
-      box.style.color = "white";
+      box.style.color = "#fde68a";
+      scoreO.style.borderBottom = "5px solid red";
+      scoreX.style.borderBottom = "";
       turnO = true;
       turnX = false;
     }
@@ -69,13 +77,14 @@ const enableBoxes = () => {
 const showWinner = (winner) => {
   if (winner == "O") {
     winsO += 1;
-    scoreO.innerHTML = `O : ${winsO}`;
+    scoreO.innerHTML = `O : &nbsp;&nbsp;&nbsp ${winsO}`;
   } else if (winner == "X") {
     winsX += 1;
-    scoreX.innerHTML = `X : ${winsX}`;
+    scoreX.innerHTML = `X : &nbsp;&nbsp;&nbsp ${winsX}`;
   }
 
-  msg.innerText = `Winner is ${winner}`;
+  win.innerText = `${winner}`;
+  msg.innerText = `Winner!`;
 
   msgContainer.classList.remove("hide");
   setTimeout(function () {
@@ -86,9 +95,8 @@ const showWinner = (winner) => {
 
 const drawCase = () => {
   draws += 1;
+  win.innerText = `XO`;
   msg.innerText = `Draw!`;
-
-  noDraws.innerHTML = `Draws : ${draws}`;
 
   msgContainer.classList.remove("hide");
   setTimeout(function () {
@@ -122,5 +130,4 @@ const checkWinner = () => {
   }
 };
 
-newGameBtn.addEventListener("click", resetGame);
 resetBtn.addEventListener("click", resetGame);
