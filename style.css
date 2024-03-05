@@ -16,7 +16,6 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -124,15 +123,19 @@ body {
   padding: 15px;
   font-size: 20px;
   border-radius: 30px;
-  background-color: #134e4a;
+  background-color: #022c22;
   color: white;
   font-weight: 500;
   border: none;
 }
 
 footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   text-align: center;
-  background-color: #1d4ed8;
+  background-color: #064e3b;
   color: white;
   margin-bottom: 0px;
   margin: 0px;
