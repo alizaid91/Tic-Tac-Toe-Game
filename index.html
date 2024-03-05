@@ -11,7 +11,11 @@
     <title>Tic Tac Toe</title>
   </head>
   <body>
-    <h1>Tic Tac Toe Game!</h1>
+    <div class="main">
+    <div class="scores">
+      <h2 id="oscore">&nbsp;O :&nbsp;&nbsp;&nbsp; -</h2>
+      <h2 id="xscore">&nbsp;X :&nbsp;&nbsp;&nbsp; -</h2>
+    </div>
     <div class="container">
       <button class="box"></button>
       <button class="box"></button>
@@ -24,19 +28,16 @@
       <button class="box"></button>
       <div class="msg-container hide">
         <div class="content">
+          <p id="win">Winner</p>
           <h1 id="msg">Winner</h1>
-          <button id="new-game-btn">New Game</button>
         </div>
       </div>
     </div>
-    <div class="scores">
-      <h2 id="oscore">O : 0</h2>
-      <h2 id="xscore">X : 0</h2>
-      <h2 id="draws">Draws : 0</h2>
-    </div>
     <div class="game-btns">
-      <button id="reset-btn">Reset Game</button>
+      <button id="reset-btn">Restart Game</button>
     </div>
+  </div>
+    <footer>Developed by Ali Zaid</footer>
     <script src="app.js"></script>
   </body>
 </html>
