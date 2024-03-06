@@ -45,44 +45,6 @@ const resetGame = () => {
   }
 };
 
-if (turnO) {
-  scoreO.style.borderBottom = "5px solid red";
-}
-
-boxes.forEach((box) => {
-  box.addEventListener("click", () => {
-    if (turnO) {
-      box.innerHTML = "O";
-      box.style.color = "#e5e5e5";
-      scoreX.style.borderBottom = "5px solid red";
-      scoreO.style.borderBottom = "";
-      turnO = false;
-    } else {
-      box.innerHTML = "X";
-      box.style.color = "#fde68a";
-      scoreO.style.borderBottom = "5px solid red";
-      scoreX.style.borderBottom = "";
-      turnO = true;
-    }
-    box.disabled = true;
-
-    checkWinner();
-  });
-});
-
-const disableBoxes = () => {
-  for (let box of boxes) {
-    box.disabled = true;
-  }
-};
-
-const enableBoxes = () => {
-  for (let box of boxes) {
-    box.disabled = false;
-    box.innerText = "";
-  }
-};
-
 const showWinner = (winner) => {
   if (winner == "O") {
     winsO += 1;
@@ -139,4 +101,42 @@ const checkWinner = () => {
   }
 };
 
+const disableBoxes = () => {
+  for (let box of boxes) {
+    box.disabled = true;
+  }
+};
+
+const enableBoxes = () => {
+  for (let box of boxes) {
+    box.disabled = false;
+    box.innerText = "";
+  }
+};
+
 resetBtn.addEventListener("click", resetGame);
+
+if (turnO) {
+  scoreO.style.borderBottom = "5px solid red";
+}
+
+boxes.forEach((box) => {
+  box.addEventListener("click", () => {
+    if (turnO) {
+      box.innerHTML = "O";
+      box.style.color = "#e5e5e5";
+      scoreX.style.borderBottom = "5px solid red";
+      scoreO.style.borderBottom = "";
+      turnO = false;
+    } else {
+      box.innerHTML = "X";
+      box.style.color = "#fde68a";
+      scoreO.style.borderBottom = "5px solid red";
+      scoreX.style.borderBottom = "";
+      turnO = true;
+    }
+    box.disabled = true;
+
+    checkWinner();
+  });
+});
