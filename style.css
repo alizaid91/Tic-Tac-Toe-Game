@@ -19,50 +19,29 @@ body {
   align-items: center;
 }
 
-.hide {
-  display: none;
-}
-
-.msg-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
-  z-index: 1;
-  border-radius: 15px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.msg-container.show {
-  opacity: 1;
-}
-
-#msg {
-  margin: 0;
-}
-
-#win {
-  margin: 0;
-  font-size: 100px;
-}
-
-.content {
-  position: absolute;
+.scores {
   display: flex;
-  flex-direction: column;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#oscore {
+  background-color: #082f49;
   color: white;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 0px;
+  font-size: 32px;
+}
+
+#xscore {
+  background-color: #082f49;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 0px;
+  font-size: 32px;
 }
 
 .container {
@@ -87,34 +66,56 @@ body {
   /* box-shadow: 3px 3px 6px; */
 }
 
+.msg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  border-radius: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+#msg {
+  margin: 0;
+}
+
+#win {
+  margin: 0;
+  font-size: 100px;
+}
+
+.hide {
+  display: none;
+}
+
+.msg-container.show {
+  opacity: 1;
+}
+
+
 .game-btns {
   display: flex;
   gap: 30px;
-}
-
-.scores {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-#oscore {
-  background-color: #082f49;
-  color: white;
-  padding: 10px 20px 10px 20px;
-  border-radius: 10px;
-  margin-bottom: 0px;
-  font-size: 32px;
-}
-
-#xscore {
-  background-color: #082f49;
-  color: white;
-  padding: 10px 20px 10px 20px;
-  border-radius: 10px;
-  margin-bottom: 0px;
-  font-size: 32px;
 }
 
 #reset-btn {
