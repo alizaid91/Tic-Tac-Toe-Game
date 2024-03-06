@@ -1,6 +1,5 @@
 let boxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#reset-btn");
-let newGameBtn = document.querySelector("#new-game-btn");
 let msgContainer = document.querySelector(".msg-container");
 let win = document.querySelector("#win");
 let msg = document.querySelector("#msg");
@@ -12,6 +11,9 @@ let winsO = 0;
 let winsX = 0;
 let draws = 0;
 
+let turnO = true;
+let initialTurnO = true;
+
 let winPatterns = [
   [0, 1, 2],
   [0, 3, 6],
@@ -22,17 +24,26 @@ let winPatterns = [
   [3, 4, 5],
   [6, 7, 8],
 ];
+
 const resetGame = () => {
-  turnX = true;
   setTimeout(function () {
     msgContainer.classList.add("hide");
   }, 300);
   msgContainer.classList.remove("show");
   enableBoxes();
-};
+  // Switch the starting player for the next game
+  initialTurnO = !initialTurnO;
+  turnO = initialTurnO;
 
-let turnO = true;
-let turnX = false;
+  // Update initial styling based on the starting player
+  if (turnO) {
+    scoreO.style.borderBottom = "5px solid red";
+    scoreX.style.borderBottom = "";
+  } else {
+    scoreX.style.borderBottom = "5px solid red";
+    scoreO.style.borderBottom = "";
+  }
+};
 
 if (turnO) {
   scoreO.style.borderBottom = "5px solid red";
@@ -46,14 +57,12 @@ boxes.forEach((box) => {
       scoreX.style.borderBottom = "5px solid red";
       scoreO.style.borderBottom = "";
       turnO = false;
-      turnX = true;
-    } else if (turnX) {
+    } else {
       box.innerHTML = "X";
       box.style.color = "#fde68a";
       scoreO.style.borderBottom = "5px solid red";
       scoreX.style.borderBottom = "";
       turnO = true;
-      turnX = false;
     }
     box.disabled = true;
 
