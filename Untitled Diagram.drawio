@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-03-21T14:50:32.329Z" agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="Th6Ys6m9OsBFCrq_F8Cp" version="24.0.7" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-21T15:10:46.465Z" agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="AwQrOYHTcPdd73Wecv8G" version="24.0.7" type="github">
   <diagram name="Page-1" id="9HjjZpsJppYOLam2nXCI">
-    <mxGraphModel dx="882" dy="1866" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="722" dy="1739" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -21,6 +21,18 @@
         </mxCell>
         <mxCell id="zzKsqflYv1q1fIZvcmlV-27" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/success-filloutline/64/idea-read-knowledge-light_bulb-thinking-128.png" parent="1" vertex="1">
           <mxGeometry x="621.5" y="300" width="37" height="37" as="geometry" />
+        </mxCell>
+        <mxCell id="yB9FJj3pMb_im3MLU0vD-1" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="542.5" y="-75" width="195" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="yB9FJj3pMb_im3MLU0vD-3" value="SCORE&amp;nbsp;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#CC6600;" vertex="1" parent="1">
+          <mxGeometry x="610" y="-75" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yB9FJj3pMb_im3MLU0vD-5" value="50" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;rounded=0;fontSize=32;fontStyle=1;fontColor=#009900;fontFamily=Helvetica;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="610" y="-40" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yB9FJj3pMb_im3MLU0vD-7" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-4/256/speaker-simple-high-fill-128.png" vertex="1" parent="1">
+          <mxGeometry x="505" y="-95" width="20" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
